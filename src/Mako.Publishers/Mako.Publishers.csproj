@@ -5,11 +5,11 @@
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{097C6416-0BBB-4C49-8660-032B68F2F2A2}</ProjectGuid>
+    <ProjectGuid>{1BF4ABF2-F9C7-4F0B-9D04-BC17FC278A79}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace />
-    <AssemblyName>Mako</AssemblyName>
+    <AssemblyName>Mako.Publishers</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -33,26 +33,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Mako.Blocks\Sequence.cs" />
-    <Compile Include="Mako.Concurrency\TaskAwaitable.cs" />
-    <Compile Include="Mako.Concurrency\TaskAwaiter.cs" />
-    <Compile Include="Mako.Concurrency\TaskExtensions.cs" />
-    <Compile Include="Mako\Block.cs" />
-    <Compile Include="Mako\BlockExtensions.cs" />
-    <Compile Include="Mako\BlockLinkage.cs" />
-    <Compile Include="Mako\BlockResultPublisher.cs" />
-    <Compile Include="Mako\CompositionError.cs" />
-    <Compile Include="Mako\CompositionErrorCode.cs" />
-    <Compile Include="Mako.Concurrency\IAwaiter.cs" />
-    <Compile Include="Mako.Concurrency\IAwaitable.cs" />
-    <Compile Include="Mako\CompositionErrorExtensions.cs" />
-    <Compile Include="Mako\IBlock.cs" />
-    <Compile Include="Mako\IBlockMutation.cs" />
-    <Compile Include="Mako\IBlockResultPublisher.cs" />
-    <Compile Include="Mako\IBlockVisitor.cs" />
-    <Compile Include="Mako.Blocks\IdentityBlock.cs" />
-    <Compile Include="Mako\BlockResult.cs" />
+    <!-- A reference to the entire .NET Framework is automatically included -->
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Mako.Publishers\AwaitableBlockResultPublisher.cs" />
+    <Compile Include="Mako.Publishers\ObservableBlockResultPublisher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mako\Mako.csproj">
+      <Project>{097c6416-0bbb-4c49-8660-032b68f2f2a2}</Project>
+      <Name>Mako</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
 </Project>

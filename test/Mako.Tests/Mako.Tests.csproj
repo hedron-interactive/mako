@@ -50,11 +50,21 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Mako\Demand.cs" />
+    <Compile Include="Mako.Blocks.Tests\LamdaBlockUnits.cs" />
     <Compile Include="Mako.Usage\BlockUsage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\..\src\Mako.Blocks\Mako.Blocks.csproj">
+      <Project>{6bb2208c-1956-47b5-af25-afe90cbf71f2}</Project>
+      <Name>Mako.Blocks</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Mako.Publishers\Mako.Publishers.csproj">
+      <Project>{1bf4abf2-f9c7-4f0b-9d04-bc17fc278a79}</Project>
+      <Name>Mako.Publishers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Mako\Mako.csproj">
       <Project>{097c6416-0bbb-4c49-8660-032b68f2f2a2}</Project>
       <Name>Mako</Name>

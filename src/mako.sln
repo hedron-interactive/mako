@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mako.Tests", "..\test\Mako.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mako.Blocks", "Mako.Blocks\Mako.Blocks.csproj", "{6BB2208C-1956-47B5-AF25-AFE90CBF71F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mako.Publishers", "Mako.Publishers\Mako.Publishers.csproj", "{1BF4ABF2-F9C7-4F0B-9D04-BC17FC278A79}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{6BB2208C-1956-47B5-AF25-AFE90CBF71F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BB2208C-1956-47B5-AF25-AFE90CBF71F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BB2208C-1956-47B5-AF25-AFE90CBF71F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BF4ABF2-F9C7-4F0B-9D04-BC17FC278A79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BF4ABF2-F9C7-4F0B-9D04-BC17FC278A79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BF4ABF2-F9C7-4F0B-9D04-BC17FC278A79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BF4ABF2-F9C7-4F0B-9D04-BC17FC278A79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

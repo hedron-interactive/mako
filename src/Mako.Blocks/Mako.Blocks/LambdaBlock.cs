@@ -8,6 +8,49 @@ namespace Mako.Blocks
 {
     using System;
 
+    public static class LambdaBlock
+    {
+        public static LambdaBlock<TResult> Create<TResult>(Func<TResult> function)
+        {
+            if (null == function)
+            {
+                throw new ArgumentNullException("function");
+            }
+
+            return new LambdaBlock<TResult>(function);
+        }
+
+        public static LambdaBlock<T1, TResult> Create<T1, TResult>(Func<T1, TResult> function)
+        {
+            if (null == function)
+            {
+                throw new ArgumentNullException("function");
+            }
+
+            return new LambdaBlock<T1, TResult>(function);
+        }
+
+        public static LambdaBlock<T1, T2, TResult> Create<T1, T2, TResult>(Func<T1, T2, TResult> function)
+        {
+            if (null == function)
+            {
+                throw new ArgumentNullException("function");
+            }
+
+            return new LambdaBlock<T1, T2, TResult>(function);
+        }
+
+        public static LambdaBlock<T1, T2, T3, TResult> Create<T1, T2, T3, TResult>(Func<T1, T2, T3, TResult> function)
+        {
+            if (null == function)
+            {
+                throw new ArgumentNullException("function");
+            }
+
+            return new LambdaBlock<T1, T2, T3, TResult>(function);
+        }
+    }
+
     public sealed class LambdaBlock<TResult> : Block<TResult>
     {
         private readonly Func<TResult> function;

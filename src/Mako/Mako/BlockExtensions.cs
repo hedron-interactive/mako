@@ -10,9 +10,6 @@ namespace Mako
 
     public static class BlockExtensions
     {
-        private static readonly Type[] BlockGenericInterfaces = new Type[] { typeof(IBlock<>), typeof(IBlock<,>), typeof(IBlock<,,>), typeof(IBlock<,,,>) };
-        private static readonly object[] EmptyArguments = new object[0];
-
         #region Visitor Related
 
         public static TVisitor Visit<TVisitor>(this TVisitor visitor, IBlock block, string tag) 
@@ -34,6 +31,7 @@ namespace Mako
         }
 
         public static TBlock Visit<TBlock>(this TBlock block, IBlockVisitor visitor, string tag)
+            where TBlock : IBlock
         {
             if (object.ReferenceEquals(null, visitor))
             {
@@ -49,5 +47,77 @@ namespace Mako
         }
 
         #endregion
+
+        public static TPublisher Apply<TPublisher, TResult>(this TPublisher publisher, IBlock<TResult> block, object receiverState)
+            where TPublisher : class, IBlockResultPublisher<TResult>
+        {
+            if (null == publisher)
+            {
+                throw new ArgumentNullException("publisher");
+            }
+
+            if (null == block)
+            {
+                throw new ArgumentNullException("block");
+            }
+
+            block.Apply(publisher, receiverState);
+
+            return publisher;
+        }
+
+        public static TPublisher Apply<TPublisher, T1, TResult>(this TPublisher publisher, IBlock<T1, TResult> block, object receiverState, T1 input1)
+            where TPublisher : class, IBlockResultPublisher<TResult>
+        {
+            if (null == publisher)
+            {
+                throw new ArgumentNullException("publisher");
+            }
+
+            if (null == block)
+            {
+                throw new ArgumentNullException("block");
+            }
+
+            block.Apply(publisher, receiverState, input1);
+
+            return publisher;
+        }
+
+        public static TPublisher Apply<TPublisher, T1, T2, TResult>(this TPublisher publisher, IBlock<T1, T2, TResult> block, object receiverState, T1 input1, T2 input2)
+            where TPublisher : class, IBlockResultPublisher<TResult>
+        {
+            if (null == publisher)
+            {
+                throw new ArgumentNullException("publisher");
+            }
+
+            if (null == block)
+            {
+                throw new ArgumentNullException("block");
+            }
+
+            block.Apply(publisher, receiverState, input1, input2);
+
+            return publisher;
+        }
+
+        public static TPublisher Apply<TPublisher, T1, T2, T3, TResult>(this TPublisher publisher, IBlock<T1, T2, T3, TResult> block, object receiverState, T1 input1, T2 input2, T3 input3)
+            where TPublisher : class, IBlockResultPublisher<TResult>
+        {
+            if (null == publisher)
+            {
+                throw new ArgumentNullException("publisher");
+            }
+
+            if (null == block)
+            {
+                throw new ArgumentNullException("block");
+            }
+
+            block.Apply(publisher, receiverState, input1, input2, input3);
+
+            return publisher;
+        }
     }
 }

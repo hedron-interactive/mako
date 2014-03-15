@@ -4,14 +4,14 @@
 
     public static class BlockResult
     {
-        public static BlockResult<TResult> FromResult<TResult>(object receiverState, TResult result)
+        public static BlockResult<TResult> FromResult<TResult>(TResult result)
         {
-            return new BlockResult<TResult>(result, null, receiverState);
+            return new BlockResult<TResult>(result, null);
         }
 
-        public static BlockResult<TResult> FromError<TResult>(object receiverState, CompositionError error)
+        public static BlockResult<TResult> FromError<TResult>(CompositionError error)
         {
-            return new BlockResult<TResult>(default(TResult), error, receiverState);
+            return new BlockResult<TResult>(default(TResult), error);
         }
     }
 
@@ -19,13 +19,11 @@
     {
         private readonly TResult result;
         private readonly CompositionError? error;
-        private readonly object state;
 
-        public BlockResult(TResult result, CompositionError? error, object state)
+        public BlockResult(TResult result, CompositionError? error)
         {
             this.result = result;
             this.error = error;
-            this.state = state; 
         }
 
         public bool HasResult
@@ -57,11 +55,6 @@
 
                 return this.error.Value;
             }
-        }
-
-        public object State
-        {
-            get { return this.state; }
         }
     }
 }

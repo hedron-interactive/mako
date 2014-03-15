@@ -65,14 +65,14 @@ namespace Mako.Blocks
             this.function = function;
         }
 
-        public override void Apply(IBlockResultPublisher<TResult> publisher, object receiverState)
+        public override void Apply(IBlockResultPublisher<TResult> publisher)
         {
             if (null == publisher)
             {
                 throw new ArgumentNullException("publisher");
             }
 
-            publisher.YieldResult(receiverState, function());
+            publisher.YieldResult(this.function());
         }
     }
 
@@ -90,14 +90,14 @@ namespace Mako.Blocks
             this.function = function;
         }
 
-        public override void Apply(IBlockResultPublisher<TResult> publisher, object receiverState, T1 input1)
+        public override void Apply(IBlockResultPublisher<TResult> publisher, T1 input1)
         {
             if (null == publisher)
             {
                 throw new ArgumentNullException("publisher");
             }
 
-            publisher.YieldResult(receiverState, function(input1));
+            publisher.YieldResult(this.function(input1));
         }
     }
 
@@ -115,14 +115,14 @@ namespace Mako.Blocks
             this.function = function;
         }
 
-        public override void Apply(IBlockResultPublisher<TResult> publisher, object receiverState, T1 input1, T2 input2)
+        public override void Apply(IBlockResultPublisher<TResult> publisher, T1 input1, T2 input2)
         {
             if (null == publisher)
             {
                 throw new ArgumentNullException("publisher");
             }
 
-            publisher.YieldResult(receiverState, function(input1, input2));
+            publisher.YieldResult(this.function(input1, input2));
         }
     }
 
@@ -140,14 +140,14 @@ namespace Mako.Blocks
             this.function = function;
         }
 
-        public override void Apply(IBlockResultPublisher<TResult> publisher, object receiverState, T1 input1, T2 input2, T3 input3)
+        public override void Apply(IBlockResultPublisher<TResult> publisher, T1 input1, T2 input2, T3 input3)
         {
             if (null == publisher)
             {
                 throw new ArgumentNullException("publisher");
             }
 
-            publisher.YieldResult(receiverState, function(input1, input2, input3));
+            publisher.YieldResult(this.function(input1, input2, input3));
         }
     }
 }

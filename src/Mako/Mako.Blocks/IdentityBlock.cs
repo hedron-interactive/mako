@@ -18,16 +18,15 @@ namespace Mako.Blocks
         /// Function application method. This method does the work associated with this block.
         /// </summary>
         /// <param name="publisher">Used to publish the blocks result.</param>
-        /// <param name="receiverState">Capture extrinsic state used by the receiver.</param>
         /// <param name="input1">First input parameter.</param>
-        public override void Apply(IBlockResultPublisher<TResult> publisher, object receiverState, TResult input1)
+        public override void Apply(IBlockResultPublisher<TResult> publisher, TResult input1)
         {
             if (null == publisher)
             {
                 throw new ArgumentNullException("publisher");
             }
 
-            publisher.YieldResult(receiverState, input1);
+            publisher.YieldResult(input1);
         }
     }
 }

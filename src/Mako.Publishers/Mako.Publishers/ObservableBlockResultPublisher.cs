@@ -32,32 +32,30 @@ namespace Mako.Publishers
         /// <summary>
         /// Publishes error information.
         /// </summary>
-        /// <param name="receiverState">Extrinsic state supplied by the receiver.</param>
         /// <param name="error">Information describing the error.</param>
         /// <remarks>An application developer should not assume control will be returned from this call immediately or ever.</remarks>
-        public override void YieldError(object receiverState, CompositionError error)
+        public override void YieldError(CompositionError error)
         {
             var publish = this.observerPublish;
 
             if (null != publish)
             {
-                publish(BlockResult.FromError<TResult>(receiverState, error));
+                publish(BlockResult.FromError<TResult>(error));
             }
         }
 
         /// <summary>
         /// Publishes a result.
         /// </summary>
-        /// <param name="receiverState">Extrinsic state supplied by the receiver.</param>
         /// <param name="result">Result to publish.</param>
         /// <remarks>An application developer should not assume control will be returned from this call immediately or ever.</remarks>
-        public override void YieldResult(object receiverState, TResult result)
+        public override void YieldResult(TResult result)
         {
             var publish = this.observerPublish;
 
             if (null != publish)
             {
-                publish(BlockResult.FromResult(receiverState, result));
+                publish(BlockResult.FromResult(result));
             }
         }
 

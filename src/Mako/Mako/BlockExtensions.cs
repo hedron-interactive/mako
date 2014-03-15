@@ -61,7 +61,7 @@ namespace Mako
                 throw new ArgumentNullException("block");
             }
 
-            block.Apply(publisher, receiverState);
+            block.Apply(publisher);
 
             return publisher;
         }
@@ -79,7 +79,7 @@ namespace Mako
                 throw new ArgumentNullException("block");
             }
 
-            block.Apply(publisher, receiverState, input1);
+            block.Apply(publisher, input1);
 
             return publisher;
         }
@@ -97,7 +97,7 @@ namespace Mako
                 throw new ArgumentNullException("block");
             }
 
-            block.Apply(publisher, receiverState, input1, input2);
+            block.Apply(publisher, input1, input2);
 
             return publisher;
         }
@@ -115,7 +115,7 @@ namespace Mako
                 throw new ArgumentNullException("block");
             }
 
-            block.Apply(publisher, receiverState, input1, input2, input3);
+            block.Apply(publisher, input1, input2, input3);
 
             return publisher;
         }

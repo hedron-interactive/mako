@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// ---------------------------------------------------------------------------------------------------------------------
+//  <copyright file="LamdaBlockUnits.cs" company="Hedron Interactive">
+//      Copyright (c) Hedron Interactive. All rights reserved.
+//  </copyright>
+// ---------------------------------------------------------------------------------------------------------------------
 
 namespace Mako.Blocks.Tests
 {

@@ -35,8 +35,7 @@ namespace Mako
         /// Function application method. This method does the work associated with this block.
         /// </summary>
         /// <param name="publisher">Used to publish the blocks result.</param>
-        /// <param name="receiverState">Capture extrinsic state used by the receiver.</param>
-        void Apply(IBlockResultPublisher<TResult> publisher, object receiverState);
+        void Apply(IBlockResultPublisher<TResult> publisher);
     }
 
     /// <summary>
@@ -50,9 +49,8 @@ namespace Mako
         /// Function application method. This method does the work associated with this block.
         /// </summary>
         /// <param name="publisher">Used to publish the blocks result.</param>
-        /// <param name="receiverState">Capture extrinsic state used by the receiver.</param>
         /// <param name="input1">First input parameter.</param>
-        void Apply(IBlockResultPublisher<TResult> publisher, object receiverState, T1 input1);
+        void Apply(IBlockResultPublisher<TResult> publisher, T1 input1);
     }
 
     /// <summary>
@@ -67,10 +65,9 @@ namespace Mako
         /// Function application method. This method does the work associated with this block.
         /// </summary>
         /// <param name="publisher">Used to publish the blocks result.</param>
-        /// <param name="receiverState">Capture extrinsic state used by the receiver.</param>
         /// <param name="input1">First input parameter.</param>
         /// <param name="input2">Second input parameter.</param>
-        void Apply(IBlockResultPublisher<TResult> publisher, object receiverState, T1 input1, T2 input2);
+        void Apply(IBlockResultPublisher<TResult> publisher, T1 input1, T2 input2);
     }
 
     /// <summary>
@@ -86,10 +83,9 @@ namespace Mako
         /// Function application method. This method does the work associated with this block.
         /// </summary>
         /// <param name="publisher">Used to publish the blocks result.</param>
-        /// <param name="receiverState">Capture extrinsic state used by the receiver.</param>
         /// <param name="input1">First input parameter.</param>
         /// <param name="input2">Second input parameter.</param>
         /// <param name="input3">Third input parameter.</param>
-        void Apply(IBlockResultPublisher<TResult> publisher, object receiverState, T1 input1, T2 input2, T3 input3);
+        void Apply(IBlockResultPublisher<TResult> publisher, T1 input1, T2 input2, T3 input3);
     }
 }

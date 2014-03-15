@@ -11,11 +11,11 @@ namespace Mako
 
     public abstract class BlockResultPublisher<TResult> : IBlockResultPublisher<TResult>
     {
-        public abstract void YieldError(object receiverState, CompositionError error);
+        public abstract void YieldError(CompositionError error);
 
-        public abstract void YieldResult(object receiverState, TResult result);
+        public abstract void YieldResult(TResult result);
 
-        public virtual async void YieldResult(object receiverState, IAwaitable<TResult> result)
+        public virtual async void YieldResult(IAwaitable<TResult> result)
         {
             TResult value;
 
@@ -30,11 +30,11 @@ namespace Mako
             }
             catch (Exception error)
             {
-                this.YieldError(receiverState, error.AsError(CompositionErrorCode.TrappedAsyncException));
+                this.YieldError(error.AsError(CompositionErrorCode.TrappedAsyncException));
                 return;
             }
 
-            this.YieldResult(receiverState, value);
+            this.YieldResult(value);
         }
     }
 }

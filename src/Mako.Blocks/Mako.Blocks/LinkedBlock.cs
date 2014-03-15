@@ -2,12 +2,35 @@ namespace Mako.Blocks
 {
     using System;
 
-    public sealed class LinkBlock<TAntecedentResult, TResult> : Block<TResult>
+    public static class LinkedBlock
+    {
+        public static IBlock<TResult> LinkTo<TAntecedentResult, TResult>(this IBlock<TAntecedentResult> antecedent, IBlock<TAntecedentResult, TResult> consequent)
+        {
+            return new LinkedBlock<TAntecedentResult, TResult>(antecedent, consequent);
+        }
+
+        public static IBlock<T1, TResult> LinkTo<T1, TAntecedentResult, TResult>(this IBlock<T1, TAntecedentResult> antecedent, IBlock<TAntecedentResult, TResult> consequent)
+        {
+            return new LinkedBlock<T1, TAntecedentResult, TResult>(antecedent, consequent);
+        }
+
+        public static IBlock<T1, T2, TResult> LinkTo<T1, T2, TAntecedentResult, TResult>(this IBlock<T1, T2, TAntecedentResult> antecedent, IBlock<TAntecedentResult, TResult> consequent)
+        {
+            return new LinkedBlock<T1, T2, TAntecedentResult, TResult>(antecedent, consequent);
+        }
+
+        public static IBlock<T1, T2, T3, TResult> LinkTo<T1, T2, T3, TAntecedentResult, TResult>(this IBlock<T1, T2, T3, TAntecedentResult> antecedent, IBlock<TAntecedentResult, TResult> consequent)
+        {
+            return new LinkedBlock<T1, T2, T3, TAntecedentResult, TResult>(antecedent, consequent);
+        }
+    }
+
+    public sealed class LinkedBlock<TAntecedentResult, TResult> : Block<TResult>
     {
         private readonly IBlock<TAntecedentResult> antecedent;
         private readonly IBlock<TAntecedentResult, TResult> consequent;
 
-        public LinkBlock(IBlock<TAntecedentResult> antecedent, IBlock<TAntecedentResult, TResult> consequent)
+        public LinkedBlock(IBlock<TAntecedentResult> antecedent, IBlock<TAntecedentResult, TResult> consequent)
         {
             if (null == antecedent)
             {
@@ -23,29 +46,29 @@ namespace Mako.Blocks
             this.consequent = consequent;
         }
 
-        public override void Apply(IBlockResultPublisher<TResult> publisher, object receiverState)
+        public override void Apply(IBlockResultPublisher<TResult> publisher)
         {
             if (null == publisher)
             {
                 throw new ArgumentNullException("publisher");
             }
 
-            var innerPublisher = new LinkBlockResultPublisher<TResult, TAntecedentResult>
+            var innerPublisher = new LinkedBlockResultPublisher<TResult, TAntecedentResult>
             {
                 ExternalPublisher = publisher,
                 Consequent = this.consequent
             };
 
-            this.antecedent.Apply(innerPublisher, receiverState);
+            this.antecedent.Apply(innerPublisher);
         }
     }
 
-    public sealed class LinkBlock<T1, TAntecedentResult, TResult> : Block<T1, TResult>
+    public sealed class LinkedBlock<T1, TAntecedentResult, TResult> : Block<T1, TResult>
     {
         private readonly IBlock<T1, TAntecedentResult> antecedent;
         private readonly IBlock<TAntecedentResult, TResult> consequent;
 
-        public LinkBlock(IBlock<T1, TAntecedentResult> antecedent, IBlock<TAntecedentResult, TResult> consequent)
+        public LinkedBlock(IBlock<T1, TAntecedentResult> antecedent, IBlock<TAntecedentResult, TResult> consequent)
         {
             if (null == antecedent)
             {
@@ -61,29 +84,29 @@ namespace Mako.Blocks
             this.consequent = consequent;
         }
 
-        public override void Apply(IBlockResultPublisher<TResult> publisher, object receiverState, T1 input1)
+        public override void Apply(IBlockResultPublisher<TResult> publisher, T1 input1)
         {
             if (null == publisher)
             {
                 throw new ArgumentNullException("publisher");
             }
 
-            var innerPublisher = new LinkBlockResultPublisher<TResult, TAntecedentResult>
+            var innerPublisher = new LinkedBlockResultPublisher<TResult, TAntecedentResult>
             {
                 ExternalPublisher = publisher,
                 Consequent = this.consequent
             };
 
-            this.antecedent.Apply(innerPublisher, receiverState, input1);
+            this.antecedent.Apply(innerPublisher, input1);
         }
     }
 
-    public sealed class LinkBlock<T1, T2, TAntecedentResult, TResult> : Block<T1, T2, TResult>
+    public sealed class LinkedBlock<T1, T2, TAntecedentResult, TResult> : Block<T1, T2, TResult>
     {
         private readonly IBlock<T1, T2, TAntecedentResult> antecedent;
         private readonly IBlock<TAntecedentResult, TResult> consequent;
 
-        public LinkBlock(IBlock<T1, T2, TAntecedentResult> antecedent, IBlock<TAntecedentResult, TResult> consequent)
+        public LinkedBlock(IBlock<T1, T2, TAntecedentResult> antecedent, IBlock<TAntecedentResult, TResult> consequent)
         {
             if (null == antecedent)
             {
@@ -99,29 +122,29 @@ namespace Mako.Blocks
             this.consequent = consequent;
         }
 
-        public override void Apply(IBlockResultPublisher<TResult> publisher, object receiverState, T1 input1, T2 input2)
+        public override void Apply(IBlockResultPublisher<TResult> publisher, T1 input1, T2 input2)
         {
             if (null == publisher)
             {
                 throw new ArgumentNullException("publisher");
             }
 
-            var innerPublisher = new LinkBlockResultPublisher<TResult, TAntecedentResult>
+            var innerPublisher = new LinkedBlockResultPublisher<TResult, TAntecedentResult>
             {
                 ExternalPublisher = publisher,
                 Consequent = this.consequent
             };
 
-            this.antecedent.Apply(innerPublisher, receiverState, input1, input2);
+            this.antecedent.Apply(innerPublisher, input1, input2);
         }
     }
 
-    public sealed class LinkBlock<T1, T2, T3, TAntecedentResult, TResult> : Block<T1, T2, T3, TResult>
+    public sealed class LinkedBlock<T1, T2, T3, TAntecedentResult, TResult> : Block<T1, T2, T3, TResult>
     {
         private readonly IBlock<T1, T2, T3, TAntecedentResult> antecedent;
         private readonly IBlock<TAntecedentResult, TResult> consequent;
 
-        public LinkBlock(IBlock<T1, T2, T3, TAntecedentResult> antecedent, IBlock<TAntecedentResult, TResult> consequent)
+        public LinkedBlock(IBlock<T1, T2, T3, TAntecedentResult> antecedent, IBlock<TAntecedentResult, TResult> consequent)
         {
             if (null == antecedent)
             {
@@ -137,20 +160,20 @@ namespace Mako.Blocks
             this.consequent = consequent;
         }
 
-        public override void Apply(IBlockResultPublisher<TResult> publisher, object receiverState, T1 input1, T2 input2, T3 input3)
+        public override void Apply(IBlockResultPublisher<TResult> publisher, T1 input1, T2 input2, T3 input3)
         {
             if (null == publisher)
             {
                 throw new ArgumentNullException("publisher");
             }
 
-            var innerPublisher = new LinkBlockResultPublisher<TResult, TAntecedentResult>
+            var innerPublisher = new LinkedBlockResultPublisher<TResult, TAntecedentResult>
             {
                 ExternalPublisher = publisher,
                 Consequent = this.consequent
             };
 
-            this.antecedent.Apply(innerPublisher, receiverState, input1, input2, input3);
+            this.antecedent.Apply(innerPublisher, input1, input2, input3);
         }
     }
 }

@@ -23,14 +23,14 @@ namespace Mako.Publishers
             get { return this.resultCompletion.Task; }
         }
 
-        public override void YieldError(object receiverState, CompositionError error)
+        public override void YieldError(CompositionError error)
         {
-            this.resultCompletion.TrySetResult(BlockResult.FromError<TResult>(receiverState, error));
+            this.resultCompletion.TrySetResult(BlockResult.FromError<TResult>(error));
         }
 
-        public override void YieldResult(object receiverState, TResult result)
+        public override void YieldResult(TResult result)
         {
-            this.resultCompletion.TrySetResult(BlockResult.FromResult<TResult>(receiverState, result));
+            this.resultCompletion.TrySetResult(BlockResult.FromResult<TResult>(result));
         }
 
         public bool TryGetResult(out BlockResult<TResult> result)

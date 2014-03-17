@@ -25,12 +25,12 @@ namespace Mako.Publishers
 
         public override void YieldError(CompositionError error)
         {
-            this.resultCompletion.TrySetResult(BlockResult.FromError<TResult>(error));
+            this.resultCompletion.SetResult(BlockResult.FromError<TResult>(error));
         }
 
         public override void YieldResult(TResult result)
         {
-            this.resultCompletion.TrySetResult(BlockResult.FromResult<TResult>(result));
+            this.resultCompletion.SetResult(BlockResult.FromResult(result));
         }
 
         public bool TryGetResult(out BlockResult<TResult> result)

@@ -18,7 +18,7 @@ namespace Mako
         /// </summary>
         /// <param name="visitor">Performs operations on the visited blocks.</param>
         /// <returns>A reference to this block.</returns>
-        public void Accept(IBlockVisitor visitor)
+        public virtual void Accept(IBlockVisitor visitor)
         {
             if (null == visitor)
             {
@@ -31,7 +31,7 @@ namespace Mako
         /// </summary>
         /// <param name="mutation">Interface associated with driving the mutation.</param>
         /// <returns>A reference to a mutated version of this block.</returns>
-        public IBlock Mutate(IBlockMutation mutation)
+        public virtual IBlock Mutate(IBlockMutation mutation)
         {
             if (null == mutation)
             {

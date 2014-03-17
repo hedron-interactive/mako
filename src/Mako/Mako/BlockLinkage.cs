@@ -8,8 +8,6 @@ namespace Mako
 {
     public sealed class BlockLinkage
     {
-        public static readonly BlockLinkage I0 = null;
-        public static readonly BlockLinkage I1 = null;
-        public static readonly BlockLinkage I2 = null;
+        public static readonly BlockLinkage Placeholder = null;
     }
 }

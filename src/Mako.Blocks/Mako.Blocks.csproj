@@ -43,6 +43,8 @@
     <Compile Include="Mako.Blocks\LambdaBlock.cs" />
     <Compile Include="Mako.Blocks\LinkedBlockResultPublisher.cs" />
     <Compile Include="Mako.Blocks\LinkedBlock.cs" />
+    <Compile Include="Mako.Blocks\MapReduceBlock.cs" />
+    <Compile Include="Mako.Blocks\MapReduceResultPublisher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

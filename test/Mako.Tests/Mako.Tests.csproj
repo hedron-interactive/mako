@@ -51,6 +51,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Mako.Blocks.Tests\LinkedBlockUnits.cs" />
+    <Compile Include="Mako.Blocks.Tests\MapReduceBlockUnits.cs" />
     <Compile Include="Mako\Demand.cs" />
     <Compile Include="Mako.Blocks.Tests\LamdaBlockUnits.cs" />
     <Compile Include="Mako.Usage\BlockUsage.cs" />

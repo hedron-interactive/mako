@@ -42,7 +42,6 @@
     <Compile Include="Mako\Block.cs" />
     <Compile Include="Mako\BlockExtensions.cs" />
     <Compile Include="Mako\BlockLinkage.cs" />
-    <Compile Include="Mako\BlockResultPublisher.cs" />
     <Compile Include="Mako\CompositionError.cs" />
     <Compile Include="Mako\CompositionErrorCode.cs" />
     <Compile Include="Mako.Concurrency\IAwaiter.cs" />

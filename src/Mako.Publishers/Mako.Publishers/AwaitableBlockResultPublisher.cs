@@ -9,7 +9,7 @@ namespace Mako.Publishers
     using System.Threading.Tasks;
     using global::Mako.Concurrency;
 
-    public sealed class AwaitableBlockResultPublisher<TResult> : BlockResultPublisher<TResult>, IAwaitable<BlockResult<TResult>>
+    public sealed class AwaitableBlockResultPublisher<TResult> : IBlockResultPublisher<TResult>, IAwaitable<BlockResult<TResult>>
     {
         private readonly TaskCompletionSource<BlockResult<TResult>> resultCompletion;
 
@@ -23,12 +23,12 @@ namespace Mako.Publishers
             get { return this.resultCompletion.Task; }
         }
 
-        public override void YieldError(CompositionError error)
+        public void YieldError(CompositionError error)
         {
             this.resultCompletion.SetResult(BlockResult.FromError<TResult>(error));
         }
 
-        public override void YieldResult(TResult result)
+        public void YieldResult(TResult result)
         {
             this.resultCompletion.SetResult(BlockResult.FromResult(result));
         }

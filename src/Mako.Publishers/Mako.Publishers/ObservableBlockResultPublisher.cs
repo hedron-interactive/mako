@@ -13,7 +13,7 @@ namespace Mako.Publishers
     /// Responsible for publishing block results as an observable subscription.
     /// </summary>
     /// <typeparam name="TResult">Type associated with result data.</typeparam>
-    public sealed class ObservableBlockResultPublisher<TResult> : BlockResultPublisher<TResult>, IObservable<BlockResult<TResult>>, IDisposable
+    public sealed class ObservableBlockResultPublisher<TResult> : IBlockResultPublisher<TResult>, IObservable<BlockResult<TResult>>, IDisposable
     {
         private readonly object publishLock;
 
@@ -34,7 +34,7 @@ namespace Mako.Publishers
         /// </summary>
         /// <param name="error">Information describing the error.</param>
         /// <remarks>An application developer should not assume control will be returned from this call immediately or ever.</remarks>
-        public override void YieldError(CompositionError error)
+        public void YieldError(CompositionError error)
         {
             var publish = this.observerPublish;
 
@@ -49,7 +49,7 @@ namespace Mako.Publishers
         /// </summary>
         /// <param name="result">Result to publish.</param>
         /// <remarks>An application developer should not assume control will be returned from this call immediately or ever.</remarks>
-        public override void YieldResult(TResult result)
+        public void YieldResult(TResult result)
         {
             var publish = this.observerPublish;
 

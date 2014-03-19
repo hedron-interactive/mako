@@ -26,12 +26,5 @@ namespace Mako
         /// <param name="result">Result to publish.</param>
         /// <remarks>An application developer should not assume control will be returned from this call immediately or ever.</remarks>
         void YieldResult(TResult result);
-
-        /// <summary>
-        /// Publishes a result asynchronously.
-        /// </summary>
-        /// <param name="result">Promise carrying the result to publish.</param>
-        /// <remarks>An application developer should not assume control will be returned from this call immediately or ever.</remarks>
-        void YieldResult(IAwaitable<TResult> result);
     }
 }

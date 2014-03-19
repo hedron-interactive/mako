@@ -4,7 +4,7 @@
 //  </copyright>
 // ---------------------------------------------------------------------------------------------------------------------
 
-namespace Mako
+namespace Hedron.Mako
 {
     /// <summary>
     /// Responsible for producing a single output from n-ary input in a composable manor.

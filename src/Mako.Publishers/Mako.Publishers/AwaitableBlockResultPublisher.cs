@@ -4,10 +4,11 @@
 //  </copyright>
 // ---------------------------------------------------------------------------------------------------------------------
 
-namespace Mako.Publishers
+namespace Hedron.Mako.Publishers
 {
     using System.Threading.Tasks;
-    using global::Mako.Concurrency;
+    using Hedron.Mako;
+    using Hedron.Mako.Concurrency;
 
     public sealed class AwaitableBlockResultPublisher<TResult> : IBlockResultPublisher<TResult>, IAwaitable<BlockResult<TResult>>
     {

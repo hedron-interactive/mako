@@ -4,7 +4,7 @@
 //  </copyright>
 // ---------------------------------------------------------------------------------------------------------------------
 
-namespace Mako
+namespace Hedron.Mako
 {
     /// <summary>
     /// Represents an operation to be performed against a composite block structure.

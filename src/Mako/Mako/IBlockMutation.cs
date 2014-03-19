@@ -4,10 +4,8 @@
 //  </copyright>
 // ---------------------------------------------------------------------------------------------------------------------
 
-namespace Mako
+namespace Hedron.Mako
 {
-    using System;
-
     /// <summary>
     /// Represents a mutation operation against a single block. 
     /// </summary>

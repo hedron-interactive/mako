@@ -4,10 +4,9 @@
 //  </copyright>
 // ---------------------------------------------------------------------------------------------------------------------
 
-namespace Mako
+namespace Hedron.Mako
 {
-    using Mako.Publishers;
-
+    using Hedron.Mako.Publishers;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     public static class Demand

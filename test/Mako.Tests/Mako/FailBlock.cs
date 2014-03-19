@@ -4,7 +4,7 @@
 //  </copyright>
 // ---------------------------------------------------------------------------------------------------------------------
 
-namespace Mako
+namespace Hedron.Mako
 {
     using System;
     using System.Threading.Tasks;

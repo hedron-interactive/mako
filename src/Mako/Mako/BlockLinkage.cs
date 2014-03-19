@@ -4,7 +4,7 @@
 //  </copyright>
 // ---------------------------------------------------------------------------------------------------------------------
 
-namespace Mako
+namespace Hedron.Mako
 {
     public sealed class BlockLinkage
     {

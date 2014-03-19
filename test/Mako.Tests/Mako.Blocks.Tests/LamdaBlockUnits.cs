@@ -4,8 +4,10 @@
 //  </copyright>
 // ---------------------------------------------------------------------------------------------------------------------
 
-namespace Mako.Blocks.Tests
+namespace Hedron.Mako.Blocks.Tests
 {
+    using Hedron.Mako;
+    using Hedron.Mako.Blocks;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]

@@ -1,4 +1,10 @@
-﻿namespace Mako.Concurrency
+﻿// ---------------------------------------------------------------------------------------------------------------------
+//  <copyright file="TaskAwaiter.cs" company="Hedron Interactive">
+//      Copyright (c) Hedron Interactive. All rights reserved.
+//  </copyright>
+// ---------------------------------------------------------------------------------------------------------------------
+
+namespace Hedron.Mako.Concurrency
 {
     using System;
 

@@ -4,9 +4,10 @@
 //  </copyright>
 // ---------------------------------------------------------------------------------------------------------------------
 
-namespace Mako.Blocks
+namespace Hedron.Mako.Blocks
 {
     using System;
+    using global::Mako;
 
     public static class LambdaBlock
     {

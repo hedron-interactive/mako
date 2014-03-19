@@ -1,6 +1,13 @@
-﻿namespace Mako.Blocks
+﻿// ---------------------------------------------------------------------------------------------------------------------
+//  <copyright file="MapReduceResultPublisher.cs" company="Hedron Interactive">
+//      Copyright (c) Hedron Interactive. All rights reserved.
+//  </copyright>
+// ---------------------------------------------------------------------------------------------------------------------
+
+namespace Hedron.Mako.Blocks
 {
     using System.Threading;
+    using global::Mako;
 
     internal sealed class MapReduceResultPublisher<TMapResult, TReduceResult> : IBlockResultPublisher<TMapResult>
     {

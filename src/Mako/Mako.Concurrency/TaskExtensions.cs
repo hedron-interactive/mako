@@ -4,7 +4,7 @@
 //  </copyright>
 // ---------------------------------------------------------------------------------------------------------------------
 
-namespace Mako.Concurrency
+namespace Hedron.Mako.Concurrency
 {
     using System;
     using System.Threading.Tasks;

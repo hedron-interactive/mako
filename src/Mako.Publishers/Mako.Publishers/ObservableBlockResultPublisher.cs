@@ -4,10 +4,11 @@
 //  </copyright>
 // ---------------------------------------------------------------------------------------------------------------------
 
-namespace Mako.Publishers
+namespace Hedron.Mako.Publishers
 {
     using System;
     using System.Threading;
+    using Hedron.Mako;
 
     /// <summary>
     /// Responsible for publishing block results as an observable subscription.

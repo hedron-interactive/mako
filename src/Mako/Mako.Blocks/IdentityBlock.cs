@@ -4,9 +4,10 @@
 //  </copyright>
 // ---------------------------------------------------------------------------------------------------------------------
 
-namespace Mako.Blocks
+namespace Hedron.Mako.Blocks
 {
     using System;
+    using Hedron.Mako;
 
     /// <summary>
     /// This block synchronously outputs the value that was supplied to it.

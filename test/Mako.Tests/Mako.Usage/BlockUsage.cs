@@ -1,5 +1,12 @@
-﻿namespace Mako.Usage
+﻿// ---------------------------------------------------------------------------------------------------------------------
+//  <copyright file="BlockUsage.cs" company="Hedron Interactive">
+//      Copyright (c) Hedron Interactive. All rights reserved.
+//  </copyright>
+// ---------------------------------------------------------------------------------------------------------------------
+
+namespace Hedron.Mako.Usage
 {
+    using Hedron.Mako;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]

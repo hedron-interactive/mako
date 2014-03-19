@@ -4,7 +4,7 @@
 //  </copyright>
 // ---------------------------------------------------------------------------------------------------------------------
 
-namespace Mako.Concurrency
+namespace Hedron.Mako.Concurrency
 {
     public interface IAwaitable<out T>
     {

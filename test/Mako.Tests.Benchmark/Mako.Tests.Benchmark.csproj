@@ -6,7 +6,7 @@
     <ProjectGuid>{B36DD1A0-237F-4DCC-BB17-F9F2A91B935E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace />
+    <RootNamespace>Hedron</RootNamespace>
     <AssemblyName>Mako.Tests.Benchmark</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

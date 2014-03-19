@@ -1,7 +1,15 @@
-﻿namespace Mako.Blocks.Tests
+﻿// ---------------------------------------------------------------------------------------------------------------------
+//  <copyright file="MapReduceBlockUnits.cs" company="Hedron Interactive">
+//      Copyright (c) Hedron Interactive. All rights reserved.
+//  </copyright>
+// ---------------------------------------------------------------------------------------------------------------------
+
+namespace Hedron.Mako.Blocks.Tests
 {
     using System.Linq;
-
+    using global::Mako.Blocks;
+    using Hedron.Mako;
+    using Hedron.Mako.Blocks;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]

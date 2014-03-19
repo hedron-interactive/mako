@@ -1,6 +1,8 @@
 ﻿namespace Mako.Blocks
 {
     using System;
+    using Hedron.Mako;
+    using Hedron.Mako.Blocks;
 
     public static class MapReduceBlock
     {

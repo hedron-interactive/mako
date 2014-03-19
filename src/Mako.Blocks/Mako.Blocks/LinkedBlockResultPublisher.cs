@@ -1,5 +1,13 @@
-namespace Mako.Blocks
+// ---------------------------------------------------------------------------------------------------------------------
+//  <copyright file="LinkedBlockResultPublisher.cs" company="Hedron Interactive">
+//      Copyright (c) Hedron Interactive. All rights reserved.
+//  </copyright>
+// ---------------------------------------------------------------------------------------------------------------------
+
+namespace Hedron.Mako.Blocks
 {
+    using global::Mako;
+
     internal sealed class LinkedBlockResultPublisher<TResult, T1> : IBlockResultPublisher<T1>
     {
         public IBlockResultPublisher<TResult> ExternalPublisher;
